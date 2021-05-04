@@ -1,0 +1,23 @@
+{
+  "name": "the-shoppies",
+  "version": "1.0.0",
+  "description": "The Shoppies: The Movie Awards for Entrepreneurs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnahmarie/theshoppies.git"
+  },
+  "author": "Jonnah Marie Pangilinan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonnahmarie/theshoppies/issues"
+  },
+  "homepage": "https://github.com/jonnahmarie/theshoppies#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
