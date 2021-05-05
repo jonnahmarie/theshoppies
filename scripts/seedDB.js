@@ -4,9 +4,9 @@ const db = require('../models');
 // File empties the Movie nomination collection and inserts the movies below
 
 mongoose.connect(
-    process.env.MONGOD_URI ||
-    'mongod://localhost/omdb'
-);
+    process.env.MONGODB_URI ||
+    'mongod://localhost/shoppies'
+)
 
 const movieSeed = [
     {

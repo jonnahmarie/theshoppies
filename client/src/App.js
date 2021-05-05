@@ -1,18 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Index from './components/Index';
+import Header from './components/Header';
+import CurrentNomination from './components/CurrentNomination';
+import AddNomination from './components/AddNomination';
+
+
+import './index.css';
 
 const App = () => {
-  return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path='/' component={() => <Index />} />
-        </Switch>
-      </div>
-    </Router>
-  );
+    return(
+        <div style={{paddingBottom:'60px'}}>
+            <Header />
+            <CurrentNomination />
+            <AddNomination />
+        </div>
+    )
 }
 
 export default App;
