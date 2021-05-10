@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 const Schema = mongoose.Schema;
 
-const movieSchema = new Schema({
+export const movieSchema = new Schema({
     _id: { type: String },
-    title: { type: String },
-    year: { type: String },
-    image: { type: String }
+    title: { type: String, required: true },
+    year: { type: String, required: true },
+    image: { type: String, required: true, default: "" }
 });
 
 const Movie = mongoose.model('Movie', movieSchema);

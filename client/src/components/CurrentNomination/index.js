@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import API from '../../utils/API';
-import Container from '@material-ui/core/Container';
-import Nominations from './Nominations';
-import './style.css';
+import React from 'react';
+import CurrentCardList from '../CurrentCardList';
 
-class CurrentNomination extends Component {
-    state ={
-        nominatedMovies: [],
-    }
-
-    componentDidMount() {
-        API.nominatedMovies()
-            .then(nominatedMovies => this.setState({ nominatedMovies: nominatedMovies }))
-            .catch(err => console.error(err));
-    }
-
-    render() {
-        return (
-            <Container style={{textAlign:'center'}}>
-                <h1>Current Nominees</h1>
-                <Nominations movies={this.state.nominatedMovies} />
-            </Container>
-        )
-    }
+const CurrentNomination = () => {
+    return (
+        <div className='container center-align'>
+            <div className='row'>
+                <h2>Nominated Movies</h2>
+            </div>
+            <div>
+                <CurrentCardList />
+            </div>
+        </div>
+    )
 }
 
 export default CurrentNomination;

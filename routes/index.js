@@ -1,10 +1,13 @@
-const path = require('path');
-const router = require('express').Router();
-const apiRoutes = require('./api');
+const movieController = require('../controllers/movieControllers');
 
-router.use('/api', apiRoutes);
-router.use((req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+const routes = app => {
+    app.route('/api')
+        .get(movieController.findAll)
+        .post(movieController.create)
+    app.route('/api/:id')
+        .get(movieController.findById)
+        .put(movieController.update)
+        .delete(movieController.remove);
+}
 
-module.exports = router;
+export default routes;

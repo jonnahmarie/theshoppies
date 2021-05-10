@@ -1,21 +1,37 @@
-import axios from "axios";
+import axios from 'axios';
+
+const url = 'http://localhost:4000/api'
+const omdbURL = 'http://www.omdbapi.com/?apikey=b2f71a99&s='
 
 const API = {
-  getMovie: query => {
-    return axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_KEY}&t=${query}`);
-  },
-  // Deletes the book with the given id
-  deleteMovie: id => {
-    return axios.delete("/api/movies/" + id).then(result => result.data);
-  },
-  // Saves a book to the database
-  addMovie: movieData => {
-    return axios.post("/api/movies", movieData).then(result => result.data);
-  },
-  // Get the saved a books from the database
-  nominatedMovies: () => {
-    return axios.get("/api/movies").then(result => result.data);
-  }
-};
+    // gets nominated movies
+    getNominatedMovies: async () => {
+        const result = await axios.get(url, { crossdomain:true })
+        return result.data;
+    },
+    // searches OMDB API for new movie based on a query
+    getNewMovie: query => {
+        return axios.get(omdbURL + query, { crossdomain:true })
+    },
+    // gets movie with specific id
+    getMovie: id => {
+        return axios.get(url + '/' + id, { crossdomain:true })
+    },
+    // adds a new movie to the db
+    addMovie: movieData => {
+        return axios.post(url, movieData, { crossdomain:true })
+        .then(result => result.data);
+    },
+    // removes a movie from the list of nominations
+    removeMovie: id => {
+        return axios.delete(url + '/' + id, { crossdomain:true })
+        .then(result => result.data)
+        .catch(error =>{
+            if (error.response) {
+                console.log(error.response)
+            }
+        })
+    }
+}
 
 export default API;

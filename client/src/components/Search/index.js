@@ -1,13 +1,20 @@
 import React from 'react';
-import { Container, TextField } from '@material-ui/core';
 
-const Search = props => {
+const Search = (props) => {
     return (
-        <Container>
-            <form noValidate autoComplete='off'>
-                <TextField id='outlined-basic' label='Search for a movie title' variant='outlined' onChange={props.handleInputChange} value={props.search} name='search' style={{width:'60%'}} />
-            </form>
-        </Container>
+        <div className='col offset-s2 s10'>
+            <div className='input-field col s10'>
+                <i className='material-icons prefix'>search</i>
+                <input
+                    id='search_movie'
+                    type='text'
+                    className='validate'
+                    onChange={props.handleInputChange}
+                    value={props.search}
+                />
+                <label for='search_movie'>Search for a movie title.</label>
+            </div>
+        </div>
     )
 }
 
