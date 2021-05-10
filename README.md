@@ -5,7 +5,7 @@ This application was built for Shopify's UX Developer Intern & Web Developer Int
 
 This is an attempted MERN stack application, utilizing MongoDB, Express, React and Node. It utilizes Materialize CSS, axios, nodemon, and dotenv.
 
-This application is unfinished due to time constraints. [#Challenges](See Challenges).
+This application is unfinished due to time constraints. [See Challenges](#Challenges).
 
 ## Installation
 ### From your local machine
