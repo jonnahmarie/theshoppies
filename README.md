@@ -14,7 +14,7 @@ This application is unfinished due to time constraints. [#Challenges](See Challe
 - Launch the frontend by cd'ing into the client folder and running 'npm start'
 
 ## Challenges
-I ran into several challenges and was unable to complete the technical requirements set forth in the [https://docs.google.com/document/d/1SdR9rQpocsH5rPTOcxr9noqHRld5NJlylKO9Hf94U8U/edit#heading=h.31w9woubunro/](Google document).
+I ran into several challenges and was unable to complete the technical requirements set forth in the [Google document](https://docs.google.com/document/d/1SdR9rQpocsH5rPTOcxr9noqHRld5NJlylKO9Hf94U8U/edit#heading=h.31w9woubunro).
 - I was unable to make POST/GET/DELETE requests due to running into issues with CORS. The backend runs on localhost:4000 whereas the frontend runs on localhost:3000. Calling the db API from the frontend caused me major issues.
 - I was unable to successfully pull information from the API nor was I able to write in logic to alert the user of them nominating 5 movies.
 - I was unable to successfully deploy the application to Heroku due to the differing localhosts.
